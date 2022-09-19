@@ -1,0 +1,39 @@
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua'))()
+
+local Window = Library:CreateWindow('Smile X', 'Infectious Smile', 'Smile X GUI - An GUI designed to specifically to inahlate child.', 'rbxassetid://9071695420', false, 'SmileXConfigs', 'Default')
+
+local TabTeleports = Window:CreateTab('Teleports', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
+local TabAntiCheat = Window:CreateTab('AntiCheat', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
+local SectionMainTPs = TabTeleports:CreateSection('Main')
+
+local SectionMainAC = TabAntiCheat:CreateSection('Main')
+
+local TPtoSpawnButton = SectionMainTPs:CreateButton('Teleport to Spawn', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.7243156, 3.25004959, -6.6587534, -0.366583109, 0, 0.930385351, 0, 1, 0, -0.930385351, 0, -0.366583109)
+end)
+
+local TPtoEndButton = SectionMainTPs:CreateButton('Teleport to End', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-337.631042, 3.00004578, 18.4392071, 0.930372357, -0, -0.36661607, 0, 1, -0, 0.36661607, 0, 0.930372357)
+end)
+
+local TPtoRoom1Button = SectionMainTPs:CreateButton('Teleport to Room 1', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-50.823204, 3.00000024, -3.62738943, 0.120229147, -1.2006411e-08, 0.992746174, -1.42503955e-08, 1, 1.38199718e-08, -0.992746174, -1.580859e-08, 0.120229147)
+end)
+
+local TPtoRoom2Button = SectionMainTPs:CreateButton('Teleport to Room 2', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-112.41114, 2.99999928, -2.96691132, -0.0645670891, -1.57669682e-08, 0.997913361, 3.13763127e-09, 1, 1.60029483e-08, -0.997913361, 4.16434798e-09, -0.0645670891)
+end)
+
+local TPtoRoom3Button = SectionMainTPs:CreateButton('Teleport to Room 3', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-170.246918, 3.00000024, -2.60085797, -0.0310023669, 9.19693974e-08, 0.999519289, 9.64374003e-09, 1, -9.17145044e-08, -0.999519289, 6.79573775e-09, -0.0310023669)
+end)
+
+local TPtoRoom4Button = SectionMainTPs:CreateButton('Teleport to Room 4', function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-228.831253, 2.99999928, -4.41364527, 0.0147662098, -1.25034223e-08, 0.999890983, 1.24027622e-07, 1, 1.06731681e-08, -0.999890983, 1.23856495e-07, 0.0147662098)
+end)
+
+local RemoveACButton = SectionMainAC:CreateButton('Remove AntiCheat Kill parts', function()
+    game:GetService("Workspace").Map.AntiHack:Destroy()
+end)
