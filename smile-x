@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua'))()
 
-local Window = Library:CreateWindow('Smile X', 'Infectious Smile', 'Smile X GUI - An GUI designed to specifically to inahlate child.', 'rbxassetid://9071695420', false, 'SmileXConfigs', 'Default')
+local Window = Library:CreateWindow('Smile X - Loadstring Edition', 'Infectious Smile', 'Smile X GUI - An GUI designed to specifically to inahlate child.', 'rbxassetid://9071695420', false, 'SmileXConfigs', 'Default')
 
 local TabTeleports = Window:CreateTab('Teleports', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
 
