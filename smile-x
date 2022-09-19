@@ -6,9 +6,17 @@ local TabTeleports = Window:CreateTab('Teleports', true, 'rbxassetid://392630590
 
 local TabAntiCheat = Window:CreateTab('AntiCheat', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
 
+local TabPlayer = Window:CreateTab('Player', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
+local TabMisc = Window:CreateTab('Misc', true, 'rbxassetid://3926305904', Vector2.new(484, 44), Vector2.new(36, 36))
+
 local SectionMainTPs = TabTeleports:CreateSection('Main')
 
 local SectionMainAC = TabAntiCheat:CreateSection('Main')
+
+local SectionMainPLR = TabPlayer:CreateSection('Main')
+
+local SectionMainMisc = TabMisc:CreateSection('Main')
 
 local TPtoSpawnButton = SectionMainTPs:CreateButton('Teleport to Spawn', function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.7243156, 3.25004959, -6.6587534, -0.366583109, 0, 0.930385351, 0, 1, 0, -0.930385351, 0, -0.366583109)
@@ -36,4 +44,27 @@ end)
 
 local RemoveACButton = SectionMainAC:CreateButton('Remove AntiCheat Kill parts', function()
     game:GetService("Workspace").Map.AntiHack:Destroy()
+end)
+
+local ChangePLRSpeedSlider = SectionMainPLR:CreateSlider('WalkSpeed', 1, 100, 16, Color3.fromRGB(0, 125, 255), function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+
+local ChangePLRSJumpPowerSlider = SectionMainPLR:CreateSlider('JumpPower', 1, 100, 50, Color3.fromRGB(0, 125, 255), function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+end)
+
+local ESPToggle = SectionMainMisc:CreateToggle('Toggle ESP', false, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+    getgenv().enabled = Value --Toggle on/off
+    getgenv().uselocalplayer = false --Choose whether the ESP highlights LocalPlayer or not
+    getgenv().filltrans = 0.5 --Change fill transparency
+    getgenv().outlinetrans = 0 --Change outline transparency
+    getgenv().fillcolor = Color3.new(255, 255, 255) --Change fill color, no need to edit if using team color
+    getgenv().outlinecolor = Color3.new(255, 255, 255) --Change outline color, no need to edit if using team color
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+end)
+
+local ESPTeamColorToggle = SectionMainMisc:CreateToggle('Toggle ESP Team Color', true, Color3.fromRGB(0, 125, 255), 0.25, function(Value)
+    getgenv().filluseteamcolor = Value --Toggle fill color using player team color on/off
+    getgenv().outlineuseteamcolor = Value --Toggle outline color using player team color on/off
 end)
